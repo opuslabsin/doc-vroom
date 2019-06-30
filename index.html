@@ -277,6 +277,21 @@ This guide assumes you have some experience in setting up PHP based web applicat
       <li>For example <code class="highlighter-rouge">cp -r vroom-angular/dist/* vroom/public/admin/</code> assuming <code class="highlighter-rouge">vroom-angular</code> is your angular project folder and <code class="highlighter-rouge">vroom</code> is your laravel project folder</li>
     </ul>
   </li>
+  <li>
+    <h3 id="otp-verification">OTP Verification</h3>
+    <p>In server code, you will find a file named <code class="highlighter-rouge">otp.html</code> in <code class="highlighter-rouge">public</code> folder. You will need to update firebase config in this file to successfully run the OTP verification. Follow these steps:-</p>
+    <ul>
+      <li>In you firebase console, go to <code class="highlighter-rouge">Project Overview</code> &gt; <code class="highlighter-rouge">Project Settings</code></li>
+      <li>Now click on <code class="highlighter-rouge">Add App</code> and select <code class="highlighter-rouge">web</code> in platform. Fill the required details.</li>
+      <li>You will be presented with script, copy the <code class="highlighter-rouge">firebaseConfig</code> complete variable</li>
+      <li>Now, in <code class="highlighter-rouge">otp.html</code> you will find a similar variable declared near line number <code class="highlighter-rouge">406</code></li>
+      <li>Replace the existing variable with new variable you copied from firebase console</li>
+      <li>Next, go to <code class="highlighter-rouge">Authentication</code> &gt; <code class="highlighter-rouge">Sign-in method</code> &gt; <code class="highlighter-rouge">Authorize domains</code> section</li>
+      <li>Click on <code class="highlighter-rouge">Add domain</code>, in domain field enter your domain name or IP address if you are not using domain name yet</li>
+      <li>For example <code class="highlighter-rouge">vroom.com</code> or <code class="highlighter-rouge">1.2.3.4</code></li>
+      <li>Finally click on <code class="highlighter-rouge">Add</code> button</li>
+    </ul>
+  </li>
 </ol>
 
 <h1 id="mobile-app">Mobile App</h1>
@@ -437,7 +452,7 @@ Please raise an issue ticket at this link <a href="https://opuslabs.freshdesk.co
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2019 Opus Labs. All rights reserved. <br />
- Site last generated: Apr 4, 2019 <br />
+ Site last generated: Jun 30, 2019 <br />
 <p><img src="images/company_logo_dark.png" alt="Company logo"/></p>
                 </div>
             </div>
